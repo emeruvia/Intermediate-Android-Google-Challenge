@@ -211,6 +211,18 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         return true;
     }
 
+    private void mapLocation() {
+        String address = "5019 S Cleveland Ave, Fort Myers, FL 33907";
+        Uri location = Uri.parse("geo:0,0?q=" + address);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(location);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -221,7 +233,11 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
+        // Completed (2) Launch the map when the map menu item is clicked
+        if (id == R.id.action_map) {
+            mapLocation();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

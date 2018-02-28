@@ -28,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.sunshine.ForecastAdapter.ForecastAdapterOnClickHandler;
 import com.example.android.sunshine.data.SunshinePreferences;
@@ -117,10 +118,11 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
     @Override
     public void onClick(String weatherForDay) {
         Context context = this;
-        Class destinationClass = DetailActivity.class;
-        Intent intentToStartDetailActivity = new Intent(context, destinationClass);
-        // TODO (1) Pass the weather to the DetailActivity
-        startActivity(intentToStartDetailActivity);
+        // Completed (1) Create a new Activity called DetailActivity using Android Studio's wizard
+        // Completed (2) Change the root layout of activity_detail.xml to a FrameLayout and remove unnecessary xml attributes
+        // Completed (3) Remove the Toast and launch the DetailActivity using an explicit Intent
+        Intent intent = new Intent(this, DetailActivity.class);
+        startActivity(intent);
     }
 
     /**
