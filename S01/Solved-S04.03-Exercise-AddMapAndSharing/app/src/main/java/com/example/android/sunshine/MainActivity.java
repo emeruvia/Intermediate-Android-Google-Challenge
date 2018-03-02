@@ -217,7 +217,6 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(location);
-
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
@@ -238,7 +237,6 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             mapLocation();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
